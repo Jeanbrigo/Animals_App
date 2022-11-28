@@ -1,0 +1,41 @@
+a{
+    color: white;
+}
+
+body{
+    background-image: url(https://wallpaperaccess.com/full/1862824.png);
+    background-size: cover;  
+    background-repeat: no-repeat;                  
+    background-color: black;
+    color: burlywood;
+    padding: 2em 0;
+}
+
+button{
+    background-color: burlywood;
+    border: 0.1rem solid burlywood;
+}
+
+header {
+    text-align: center;
+}
+
+.indexButton {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 1em 0
+}
+
+input{
+    background-color: burlywood;
+    border: 0.1rem solid burlywood;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2em 0
+}

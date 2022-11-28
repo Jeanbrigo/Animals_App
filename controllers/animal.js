@@ -39,7 +39,7 @@ router.get("/new", (req, res) => {
 
 // create route
 router.post("/", (req, res) => {
-    // check if the readyToEat property should be true or false
+    // check if the extinct property should be true or false
     req.body.extinct = req.body.extinct === "on" ? true : false;
     // add username to req.body to track related user
     req.body.username = req.session.username
@@ -54,7 +54,7 @@ router.post("/", (req, res) => {
 router.get("/:id/edit", (req, res) => {
   // get the id from params
   const id = req.params.id;
-  // get the fruit from the database
+  // get the animal from the database
   Animal.findById(id, (err, animal) => {
     // render template and send it animal
     res.render("animals/edit.ejs", { animal });
@@ -65,7 +65,7 @@ router.get("/:id/edit", (req, res) => {
 router.put("/:id", (req, res) => {
   // get the id from params
   const id = req.params.id;
-  // check if the readyToEat property should be true or false
+  // check if the extinct property should be true or false
   req.body.extinct = req.body.extinct === "on" ? true : false;
   // update the animal
   Animal.findByIdAndUpdate(id, req.body, { new: true }, (err, animal) => {
@@ -77,7 +77,7 @@ router.put("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
   // get the id from params
   const id = req.params.id;
-  // delete the fruit
+  // delete the animal
   Animal.findByIdAndRemove(id, (err, animal) => {
     // redirect user back to index page
     res.redirect("/animals");
@@ -89,7 +89,7 @@ router.get("/:id", (req, res) => {
   // get the id from params
   const id = req.params.id;
 
-  // find the particular fruit from the database
+  // find the particular animal from the database
   Animal.findById(id, (err, animal) => {
     // render the template with the data from the database
     res.render("animals/show.ejs", { animal });
